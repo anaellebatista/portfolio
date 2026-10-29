@@ -1,0 +1,1947 @@
+
+/* ==========================================
+   01 — IDENTITÉ VISUELLE
+   Couleurs et variables personnalisables
+========================================== */
+
+:root {
+  --lavender: #b9aaf1;
+  --lavender-light: #e5defc;
+  --peach: #ffdfd1;
+  --cream: #fff9f4;
+  --ink: #231f2c;
+  --muted: #655e6d;
+  --line: rgba(35, 31, 44, 0.17);
+  --radius: 24px;
+  --container: 1160px;
+}
+
+
+/* ==========================================
+   02 — STYLES GÉNÉRAUX
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.dialog-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+}
+
+img {
+  object-fit: cover;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #765ed1;
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(calc(100% - 48px), var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+
+/* Lien d'accessibilité */
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 99;
+  background: white;
+  padding: 12px;
+}
+
+.skip-link:focus {
+  top: 15px;
+}
+
+
+/* ==========================================
+   03 — HEADER / NAVIGATION
+========================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 249, 244, 0.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Logo */
+
+.brand {
+  font-size: 27px;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
+.brand span {
+  color: #8974d5;
+  padding-left: 4px;
+}
+
+
+/* Liens de navigation */
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.55;
+}
+
+
+/* Bouton contact */
+
+.nav-contact {
+  background: var(--ink);
+  color: white;
+  padding: 13px 20px;
+  border-radius: 50px;
+}
+
+
+/* Menu mobile */
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 23px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px auto;
+  transition: transform 0.2s;
+}
+
+
+/* ==========================================
+   04 — SECTION ACCUEIL / HERO
+========================================== */
+
+.hero {
+  padding: 44px 0 38px;
+  background: var(--lavender);
+  overflow: hidden;
+}
+
+.hero-inner {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Informations en haut et en bas */
+
+.hero-top,
+.hero-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hero-top {
+  top: 0;
+}
+
+.hero-bottom {
+  bottom: 0;
+}
+
+.hero-bottom a {
+  border-bottom: 1px solid currentColor;
+}
+
+
+/* Introduction */
+
+.hero-kicker {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 -12px 8px;
+}
+
+
+/* Grand titre Portfolio */
+
+.hero h1 {
+  position: relative;
+  font-size: clamp(100px, 16vw, 235px);
+  font-weight: 900;
+  letter-spacing: -0.105em;
+  line-height: 0.88;
+  margin: 0 0 65px -13px;
+  color: #fff8f6;
+  white-space: nowrap;
+}
+
+.hero h1 span {
+  letter-spacing: -0.11em;
+}
+
+
+/* Prénom et nom manuscrits */
+
+.hero h1 em {
+  position: absolute;
+  left: 32%;
+  top: 48%;
+  transform: rotate(-9deg);
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(44px, 6.3vw, 91px);
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+
+/* Phrase de présentation */
+
+.hero-lead {
+  font-size: clamp(18px, 2.3vw, 27px);
+  font-weight: 600;
+  max-width: 520px;
+  line-height: 1.25;
+}
+
+
+/* Boutons */
+
+.hero-actions,
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 15px 23px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-dark {
+  background: var(--ink);
+  color: white;
+}
+
+.button-outline {
+  border: 1px solid var(--ink);
+}
+
+
+/* Étoiles décoratives */
+
+.sparkle {
+  position: absolute;
+  color: #fffaf6;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.sparkle-one {
+  font-size: 80px;
+  right: 11%;
+  top: 12%;
+}
+
+.sparkle-two {
+  font-size: 56px;
+  right: 25%;
+  top: 28%;
+}
+
+.sparkle-three {
+  font-size: 60px;
+  left: 8%;
+  bottom: 20%;
+}
+
+
+/* ==========================================
+   05 — TITRES DES SECTIONS
+========================================== */
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.section h2 {
+  font-size: clamp(44px, 6vw, 83px);
+  line-height: 1.02;
+  letter-spacing: -0.075em;
+  margin: 0 0 24px;
+  font-weight: 900;
+}
+
+.section h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+  max-width: 850px;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+}
+
+.heading-star {
+  font-size: 0.55em;
+  color: #8470d4;
+  vertical-align: top;
+  padding-left: 12px;
+}
+
+
+/* ==========================================
+   06 — SECTION À PROPOS
+========================================== */
+
+.about-section {
+  background: var(--peach);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 9%;
+  align-items: center;
+}
+
+
+/* Photo de profil */
+
+.about-visual {
+  position: relative;
+  padding: 25px;
+}
+
+.photo-frame {
+  height: 520px;
+  border-radius: 180px 180px 24px 24px;
+  overflow: hidden;
+  background: #d9c8f4;
+  position: relative;
+  transform: rotate(-3deg);
+  border: 10px solid #fff6f1;
+}
+
+.photo-frame img {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-size: 100px;
+  color: #fff7ed;
+}
+
+.photo-frame img:not(.is-loaded) {
+  display: none;
+}
+
+
+/* Étiquette décorative */
+
+.orbit-label {
+  position: absolute;
+  right: -10px;
+  bottom: 50px;
+  background: var(--lavender);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  padding: 27px 15px;
+  transform: rotate(13deg);
+  font-size: 10px;
+  font-weight: 800;
+  z-index: 2;
+}
+
+
+/* Texte de présentation */
+
+.about-copy > p:not(.eyebrow) {
+  font-size: 17px;
+  max-width: 550px;
+}
+
+
+/* Étiquettes des qualités */
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 29px;
+}
+
+.about-tags span {
+  border: 1px solid var(--ink);
+  border-radius: 50px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ==========================================
+   07 — SECTION PARCOURS
+   Expériences professionnelles et formations
+========================================== */
+
+.journey-section {
+  background: var(--cream);
+}
+
+
+/* Deux colonnes côte à côte */
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+}
+
+
+/* Apparence des colonnes */
+
+.journey-column {
+  padding: 36px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+
+/* Titres Expériences / Formations */
+
+.journey-column h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  margin: 0 0 33px;
+}
+
+.journey-column h3 span {
+  color: #9682df;
+}
+
+
+/* Frise chronologique */
+
+.timeline-item {
+  position: relative;
+  border-left: 2px solid var(--lavender);
+  padding: 0 0 32px 24px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+
+/* Points de la frise */
+
+.timeline-item::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background: #957edb;
+  border-radius: 50%;
+  position: absolute;
+  left: -7.5px;
+  top: 3px;
+}
+
+
+/* Dates */
+
+.timeline-date {
+  font-size: 11px;
+  color: #7262a3;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+
+/* Intitulés des postes et diplômes */
+
+.timeline-item h4 {
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 10px 0;
+}
+
+
+/* Descriptions */
+
+.timeline-item p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+
+/* Entreprise et ville sous le poste */
+
+.timeline-location {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 12px !important;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7262a3 !important;
+}
+
+
+/* ==========================================
+   08 — SECTION COMPÉTENCES
+========================================== */
+
+.skills-section {
+  background: var(--lavender-light);
+}
+
+
+/* Grille des compétences */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+
+/* Cartes */
+
+.skill-card {
+  background: #fffaf7;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  min-height: 200px;
+  transition: transform 0.25s;
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+}
+
+
+/* Icônes */
+
+.skill-icon {
+  display: block;
+  font-size: 43px;
+  color: #9983dc;
+  line-height: 1;
+}
+
+
+/* Titres */
+
+.skill-card h3 {
+  font-size: 21px;
+  line-height: 1.2;
+  margin: 28px 0 12px;
+}
+
+
+/* Descriptions */
+
+.skill-card p,
+.skills-note {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.skills-note {
+  margin-top: 25px;
+}
+
+
+/* ==========================================
+   09 — SECTION PROJETS
+========================================== */
+
+.projects-section {
+  background: var(--cream);
+}
+
+
+/* Filtres des projets */
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-button {
+  cursor: pointer;
+  border: 1px solid var(--ink);
+  background: transparent;
+  border-radius: 50px;
+  padding: 10px 21px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  background: var(--ink);
+  color: white;
+}
+
+
+/* Grille des projets */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+
+/* Images des projets et passions */
+
+.project-image,
+.passion-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--lavender-light);
+  border-radius: 18px;
+  aspect-ratio: 4 / 3;
+}
+
+
+/* Couleurs des images de projets */
+
+.project-card:nth-child(2) .project-image {
+  background: var(--peach);
+}
+
+.project-card:nth-child(3) .project-image {
+  background: #ddd2ee;
+}
+
+
+/* Animation des images */
+
+.project-image img,
+.passion-media img {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s;
+}
+
+.project-card:hover img,
+.passion-card:hover img {
+  transform: scale(1.05);
+}
+
+
+/* Images absentes */
+
+.project-image img:not(.is-loaded),
+.passion-media img:not(.is-loaded) {
+  display: none;
+}
+
+.image-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 76px;
+  font-weight: 900;
+  color: #fff8f5;
+}
+
+
+/* Catégorie et numéro */
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 19px 0 8px;
+}
+
+
+/* Titres des projets */
+
+.project-card h3 {
+  font-size: 23px;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+
+
+/* Description */
+
+.project-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* Bouton Voir le détail */
+
+.project-more {
+  cursor: pointer;
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: none;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   10 — SECTION PASSIONS
+========================================== */
+
+.passions-section {
+  background: var(--peach);
+}
+
+
+/* Grille des passions */
+
+.passions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.passion-card {
+  min-width: 0;
+}
+
+
+/* Photos des passions */
+
+.passion-media {
+  aspect-ratio: 4 / 4.4;
+  border: 8px solid #fff7f1;
+}
+
+
+/* Couleurs de remplacement */
+
+.passion-card:nth-child(2) .passion-media {
+  background: #cfbdf0;
+}
+
+.passion-card:nth-child(3) .passion-media {
+  background: #c7c1e6;
+}
+
+
+/* Titres */
+
+.passion-card h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 23px;
+  margin: 17px 0 0;
+}
+
+.passion-card h3 span {
+  color: #957cda;
+}
+
+
+/* Descriptions */
+
+.passion-card p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* ==========================================
+   11 — ESPACE VIDÉO
+========================================== */
+
+.video-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  background: #fff8f2;
+  border-radius: var(--radius);
+  padding: 35px;
+  margin-top: 70px;
+}
+
+
+/* Titre de l'espace vidéo */
+
+.video-panel h3 {
+  font-size: 35px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.video-panel h3 span {
+  color: #9a84df;
+}
+
+
+/* Description */
+
+.video-panel p:last-child {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* Lecteur vidéo */
+
+.video-panel video {
+  background: #2b2631;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+
+/* ==========================================
+   12 — SECTION CONTACT
+========================================== */
+
+.contact-section {
+  background: var(--lavender);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-inner {
+  position: relative;
+  padding: 55px 0;
+}
+
+
+/* Grand titre */
+
+.contact-inner h2 {
+  font-size: clamp(72px, 12vw, 160px);
+  line-height: 0.8;
+  color: #fff8f6;
+  margin: 30px 0;
+}
+
+.contact-inner h2 em {
+  font-size: 0.78em;
+  color: var(--ink);
+}
+
+
+/* Texte */
+
+.contact-inner > p:not(.eyebrow) {
+  font-size: 18px;
+}
+
+
+/* Boutons */
+
+.contact-actions {
+  justify-content: center;
+  margin: 35px 0;
+}
+
+
+/* Coordonnées */
+
+.contact-inner small {
+  font-size: 12px;
+}
+
+
+/* Étoile décorative */
+
+.contact-star {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-size: 90px;
+  color: white;
+}
+
+
+/* ==========================================
+   13 — FOOTER
+========================================== */
+
+.footer {
+  background: var(--ink);
+  color: #f7edf7;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 28px 0;
+  font-size: 12px;
+}
+
+
+/* ==========================================
+   14 — FENÊTRE MODALE DES PROJETS
+========================================== */
+
+.project-dialog {
+  width: min(90%, 560px);
+  border: 0;
+  border-radius: 24px;
+  padding: 42px;
+  color: var(--ink);
+  background: var(--cream);
+  box-shadow: 0 30px 100px #211a3380;
+}
+
+
+/* Arrière-plan de la fenêtre */
+
+.project-dialog::backdrop {
+  background: #241d35b3;
+  backdrop-filter: blur(5px);
+}
+
+
+/* Titre */
+
+.project-dialog h2 {
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+
+/* Bouton fermeture */
+
+.dialog-close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+
+/* Texte d'information */
+
+.dialog-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
+/* ==========================================
+   15 — ANIMATIONS AU DÉFILEMENT
+========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==========================================
+   16 — RESPONSIVE : ÉCRANS < 1000 PX
+   Tablettes et petits ordinateurs
+========================================== */
+
+@media (max-width: 1000px) {
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .hero-inner {
+    min-height: 590px;
+  }
+
+  .hero h1 {
+    font-size: clamp(90px, 16vw, 170px);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    gap: 5%;
+  }
+
+  .photo-frame {
+    height: 440px;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+
+}
+
+
+/* ==========================================
+   17 — RESPONSIVE : ÉCRANS < 760 PX
+   Tablettes verticales et smartphones
+========================================== */
+
+@media (max-width: 760px) {
+
+  /* Conteneur */
+
+  .container {
+    width: min(calc(100% - 36px), var(--container));
+  }
+
+
+  /* Navigation */
+
+  .nav {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 25px #231f2c13;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px;
+  }
+
+  .nav-contact {
+    text-align: center;
+  }
+
+
+  /* Accueil */
+
+  .hero {
+    padding: 35px 0;
+  }
+
+  .hero-inner {
+    min-height: 560px;
+  }
+
+  .hero-top {
+    font-size: 9px;
+  }
+
+  .hero-top span:last-child {
+    max-width: 160px;
+    text-align: right;
+  }
+
+  .hero h1 {
+    font-size: clamp(75px, 17vw, 128px);
+    margin-left: -7px;
+    margin-bottom: 80px;
+  }
+
+  .hero h1 em {
+    left: 18%;
+    top: 75%;
+    font-size: clamp(39px, 9vw, 65px);
+  }
+
+  .hero-kicker {
+    font-size: 15px;
+  }
+
+  .hero-lead {
+    font-size: 19px;
+  }
+
+
+  /* Étoiles */
+
+  .sparkle-one {
+    font-size: 48px;
+    top: 18%;
+  }
+
+  .sparkle-two {
+    font-size: 35px;
+    right: 15%;
+    top: 33%;
+  }
+
+  .sparkle-three {
+    font-size: 32px;
+    left: 2%;
+    bottom: 22%;
+  }
+
+  .hero-bottom {
+    font-size: 9px;
+  }
+
+
+  /* Passage en une seule colonne */
+
+  .about-grid,
+  .journey-grid,
+  .video-panel {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Photo de profil */
+
+  .about-visual {
+    max-width: 460px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .photo-frame {
+    height: 430px;
+  }
+
+  .about-copy {
+    margin-top: 25px;
+  }
+
+
+  /* Projets et passions */
+
+  .projects-grid,
+  .passions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* Vidéo */
+
+  .video-panel {
+    gap: 20px;
+  }
+
+
+  /* Contact */
+
+  .contact-star {
+    font-size: 60px;
+    right: 0;
+  }
+
+
+  /* Footer */
+
+  .footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  /* Espacement général */
+
+  .section {
+    padding: 70px 0;
+  }
+
+}
+
+
+/* ==========================================
+   18 — RESPONSIVE : ÉCRANS < 520 PX
+   Petits smartphones
+========================================== */
+
+@media (max-width: 520px) {
+
+  /* Accueil */
+
+  .hero-inner {
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 17.1vw;
+    margin-bottom: 80px;
+  }
+
+  .hero h1 em {
+    top: 78%;
+    left: 13%;
+    font-size: 10vw;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .button {
+    font-size: 12px;
+    gap: 10px;
+    padding: 13px 17px;
+  }
+
+  .hero-top span:last-child {
+    max-width: 130px;
+  }
+
+
+  /* Titres */
+
+  .section h2 {
+    font-size: 49px;
+  }
+
+
+  /* À propos */
+
+  .photo-frame {
+    height: 360px;
+  }
+
+  .orbit-label {
+    right: 0;
+  }
+
+
+  /* Grilles en une seule colonne */
+
+  .skills-grid,
+  .projects-grid,
+  .passions-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Compétences */
+
+  .skill-card {
+    min-height: auto;
+  }
+
+
+  /* Projets */
+
+  .project-image {
+    aspect-ratio: 5 / 3;
+  }
+
+
+  /* Passions */
+
+  .passion-media {
+    aspect-ratio: 5 / 4;
+  }
+
+
+  /* Parcours */
+
+  .journey-column {
+    padding: 25px;
+  }
+
+
+  /* Vidéo */
+
+  .video-panel {
+    padding: 20px;
+  }
+
+
+  /* Contact */
+
+  .contact-inner h2 {
+    font-size: 18vw;
+  }
+
+  .contact-inner > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
+}
+
+
+/* ==========================================
+   19 — ACCESSIBILITÉ
+   Réduction des animations si demandée
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+/* ==========================================
+   GALERIE DÉFILANTE — MES RÉALISATIONS
+========================================== */
+
+/* Conteneur principal */
+
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* Zone défilante */
+
+.gallery-track {
+  display: flex;
+  gap: 24px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  padding: 15px 3px 25px;
+
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Cartes des créations */
+
+.gallery-item {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+
+  scroll-snap-align: start;
+}
+
+
+/* Zone photo / vidéo */
+
+.gallery-media {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #fffaf7;
+  border-radius: 20px;
+
+  border: 6px solid white;
+
+  box-shadow: 0 8px 25px rgba(35, 31, 44, 0.08);
+}
+
+
+/* Photos et vidéos */
+
+.gallery-media img,
+.gallery-media video {
+    display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+  background: #fffaf7;
+}
+
+
+/* Photos cliquables */
+
+.gallery-media img {
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
+}
+
+.gallery-media img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Titres des réalisations */
+
+.gallery-item h3 {
+  font-size: 21px;
+  font-weight: 800;
+
+  margin: 15px 0 6px;
+}
+
+
+/* Descriptions */
+
+.gallery-item p {
+  font-size: 14px;
+  color: var(--muted);
+
+  margin: 0;
+}
+
+
+/* ==========================================
+   FLÈCHES DE NAVIGATION
+========================================== */
+
+.gallery-arrow {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+
+  background: var(--cream);
+  color: var(--ink);
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+
+/* Animation au survol */
+
+.gallery-arrow:hover {
+  background: var(--lavender);
+  transform: scale(1.08);
+}
+
+
+/* Flèche désactivée */
+
+.gallery-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ==========================================
+   COMPTEUR ET BARRE DE PROGRESSION
+========================================== */
+
+.gallery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+  margin-top: 25px;
+}
+
+
+/* Numérotation */
+
+.gallery-counter {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+
+/* Fond de la barre */
+
+.gallery-progress {
+  width: 160px;
+  height: 5px;
+
+  background: var(--lavender-light);
+  border-radius: 50px;
+
+  overflow: hidden;
+}
+
+
+/* Barre animée */
+
+.gallery-progress-bar {
+  width: 20%;
+  height: 100%;
+
+  background: #957edb;
+
+  border-radius: 50px;
+
+  transition: width 0.3s ease;
+}
+
+
+/* ==========================================
+   AGRANDISSEMENT DES PHOTOS
+========================================== */
+
+.gallery-lightbox {
+  width: min(95vw, 1000px);
+  max-height: 90vh;
+
+  padding: 35px 15px 15px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: var(--cream);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Fond sombre */
+
+.gallery-lightbox::backdrop {
+  background: rgba(20, 15, 35, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+
+/* Image agrandie */
+
+.gallery-lightbox img {
+  display: block;
+
+  width: 100%;
+  max-height: calc(90vh - 60px);
+
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+
+/* Bouton fermeture */
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--ink);
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   RESPONSIVE — TABLETTES
+========================================== */
+
+@media (max-width: 900px) {
+
+  .gallery-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE — SMARTPHONES
+========================================== */
+
+@media (max-width: 600px) {
+
+  .gallery-wrapper {
+    gap: 5px;
+  }
+
+  .gallery-item {
+    flex-basis: 100%;
+  }
+
+  .gallery-track {
+    gap: 15px;
+  }
+
+  .gallery-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .gallery-item h3 {
+    font-size: 19px;
+  }
+
+  .gallery-footer {
+    margin-top: 15px;
+  }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITÉ
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gallery-track {
+    scroll-behavior: auto;
+  }
+
+  .gallery-media img,
+  .gallery-progress-bar {
+    transition: none;
+  }
+
+}
+
+/* ==========================================
+   MINI-GALERIES — MES PASSIONS
+========================================== */
+
+/* Conteneur du carrousel */
+
+.passion-carousel {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 4.4;
+
+  overflow: hidden;
+
+  background: var(--lavender-light);
+  border: 8px solid #fff7f1;
+  border-radius: 18px;
+}
+
+
+/* Bande contenant les médias */
+
+.passion-track {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.passion-track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Chaque photo ou vidéo */
+
+.passion-slide {
+  position: relative;
+
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+
+  scroll-snap-align: start;
+
+  background: #fffaf7;
+}
+
+
+/* Images et vidéos */
+
+.passion-slide img,
+.passion-slide video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* ==========================================
+   FLÈCHES DE NAVIGATION
+========================================== */
+
+.passion-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+}
+
+
+/* Flèche gauche */
+
+.passion-prev {
+  left: 10px;
+}
+
+
+/* Flèche droite */
+
+.passion-next {
+  right: 10px;
+}
+
+
+/* Effet au survol */
+
+.passion-arrow:hover {
+  background: var(--lavender);
+}
+
+
+/* Flèche désactivée */
+
+.passion-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================
+   RESPONSIVE — SMARTPHONES
+========================================== */
+
+@media (max-width: 520px) {
+
+  .passion-carousel {
+    aspect-ratio: 5 / 4;
+  }
+
+  .passion-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITÉ
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .passion-track {
+    scroll-behavior: auto;
+  }
+
+}
