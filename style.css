@@ -200,7 +200,7 @@ a:focus-visible {
 }
 
 .hero-inner {
-  min-height: 650px;
+  min-height: 515px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -241,7 +241,7 @@ a:focus-visible {
 .hero-kicker {
   font-size: 19px;
   font-weight: 700;
-  margin: 0 0 -12px 8px;
+  margin: 0 0 70px 8px;
 }
 
 
@@ -267,11 +267,11 @@ a:focus-visible {
 
 .hero h1 em {
   position: absolute;
-  left: 32%;
-  top: 48%;
-  transform: rotate(-9deg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-9deg);
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: clamp(44px, 6.3vw, 91px);
+  font-size: clamp(60px, 8vw, 125px);
   letter-spacing: -0.055em;
   white-space: nowrap;
   color: var(--ink);
@@ -296,7 +296,7 @@ a:focus-visible {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 400px;
 }
 
 .button {
@@ -1944,4 +1944,31 @@ a:focus-visible {
     scroll-behavior: auto;
   }
 
+}
+/* ==========================================
+   PLACER UNIQUEMENT EXPLORER À DROITE
+========================================== */
+
+.hero-bottom a {
+  margin-left: auto;
+}
+/* Prénom centré dans le cadre violet */
+
+.hero-name {
+  position: absolute;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%) rotate(-9deg);
+
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(180px, 8vw, 125px);
+
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+
+  color: var(--ink);
+  z-index: 3;
 }
