@@ -961,7 +961,7 @@ a:focus-visible {
   font-size: clamp(72px, 12vw, 160px);
   line-height: 0.8;
   color: #fff8f6;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .contact-inner h2 em {
@@ -1971,4 +1971,49 @@ a:focus-visible {
 
   color: var(--ink);
   z-index: 3;
+}
+/* ==========================================
+   RESPONSIVE — PRÉNOM SUR TABLETTE
+========================================== */
+
+@media (max-width: 760px) {
+
+  .hero-name {
+    left: 50%;
+    top: 43%;
+
+    /* Taille adaptée à la largeur */
+    font-size: 8vw;
+
+    transform: translate(-50%, -50%) rotate(-9deg);
+  }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE — PRÉNOM SUR TÉLÉPHONE
+========================================== */
+
+@media (max-width: 520px) {
+
+  .hero-name {
+    position: absolute;
+
+    left: 50%;
+    top: 42%;
+
+    /* Taille proportionnelle au téléphone */
+    font-size: 8.5vw;
+
+    /* Centrage */
+    transform: translate(-50%, -50%) rotate(-9deg);
+
+    white-space: nowrap;
+    text-align: center;
+
+    /* Empêcher le débordement */
+    max-width: 90%;
+  }
+
 }
