@@ -1002,3 +1002,47 @@ if ("IntersectionObserver" in window) {
   });
 
 }
+/* ==========================================
+   RETOUR EN HAUT DE LA PAGE
+========================================== */
+
+// Sélectionner le bouton
+
+const backToTop = document.querySelector(
+  "#back-to-top"
+);
+
+
+// Ajouter l'événement au clic
+
+if (backToTop) {
+
+  backToTop.addEventListener(
+    "click",
+    (event) => {
+
+      // Empêcher le comportement automatique du lien
+
+      event.preventDefault();
+
+
+      // Remonter tout en haut de la page
+
+      window.scrollTo({
+
+        top: 0,
+
+        left: 0,
+
+        behavior: window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+          ? "auto"
+          : "smooth"
+
+      });
+
+    }
+  );
+
+}
